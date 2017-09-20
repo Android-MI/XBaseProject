@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<corners android:radius="10dp" />-->
+    <stroke
+        android:width="2px"
+        android:color="@color/mi_base_diliver_gray_cc" />
+    <gradient
+        android:centerColor="@color/mi_base_common_text_gray"
+        android:endColor="@color/mi_base_common_text_gray"
+        android:startColor="@color/mi_base_common_text_gray" />
+
+</shape>

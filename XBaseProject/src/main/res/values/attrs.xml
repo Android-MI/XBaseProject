@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 圆角图片 -->
+    <declare-styleable name="XmlCircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+    <!-- 圆角图片 -->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+    <declare-styleable name="CustomerCheckBox">
+        <attr name="android:text" />
+        <attr name="src_selected" format="reference" />
+        <attr name="src_not_selected" format="reference" />
+        <attr name="android:textSize" />
+        <attr name="checkbox_width" format="dimension" />
+        <attr name="checkbox_height" format="dimension" />
+        <attr name="padding_left" format="dimension" />
+    </declare-styleable>
+    <!-- 上下拉刷新相关 -->
+    <declare-styleable name="SwipeLayout">
+        <attr name="drag_edge" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+            <enum name="top" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <attr name="show_mode" format="enum">
+            <enum name="lay_down" value="0" />
+            <enum name="pull_out" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PullToRefreshListView">
+        <attr name="android:dividerHeight" />
+        <attr name="android:divider" />
+    </declare-styleable>
+
+    <declare-styleable name="RatingBar">
+        <attr name="rb_max_count" format="integer" />
+        <attr name="rb_count" format="integer" />
+        <attr name="rb_fill" format="reference" />
+        <attr name="rb_empty" format="reference" />
+        <attr name="rb_space" format="dimension" />
+        <attr name="rb_click_rating" format="boolean" />
+        <attr name="rb_touch_rating" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="CountdownView">
+        <attr name="isHideTimeBackground" format="boolean" />
+        <attr name="isShowTimeBgDivisionLine" format="boolean" />
+        <attr name="timeBgDivisionLineColor" format="color" />
+        <attr name="timeBgDivisionLineSize" format="dimension" />
+        <attr name="timeBgColor" format="color" />
+        <attr name="timeBgSize" format="dimension" />
+        <attr name="timeBgRadius" format="dimension" />
+
+        <attr name="isTimeTextBold" format="boolean" />
+        <attr name="timeTextSize" format="dimension" />
+        <attr name="timeTextColor" format="color" />
+        <attr name="isShowDay" format="boolean" />
+        <attr name="isShowHour" format="boolean" />
+        <attr name="isShowMinute" format="boolean" />
+        <attr name="isShowSecond" format="boolean" />
+        <attr name="isShowMillisecond" format="boolean" />
+        <attr name="isConvertDaysToHours" format="boolean" />
+
+        <attr name="isSuffixTextBold" format="boolean" />
+        <attr name="suffixTextSize" format="dimension" />
+        <attr name="suffixTextColor" format="color" />
+        <attr name="suffix" format="string" />
+        <attr name="suffixDay" format="string" />
+        <attr name="suffixHour" format="string" />
+        <attr name="suffixMinute" format="string" />
+        <attr name="suffixSecond" format="string" />
+        <attr name="suffixMillisecond" format="string" />
+        <attr name="suffixGravity">
+            <enum name="top" value="0" />
+            <enum name="center" value="1" />
+            <enum name="bottom" value="2" />
+        </attr>
+        <attr name="suffixLRMargin" format="dimension" />
+        <attr name="suffixDayLeftMargin" format="dimension" />
+        <attr name="suffixDayRightMargin" format="dimension" />
+        <attr name="suffixHourLeftMargin" format="dimension" />
+        <attr name="suffixHourRightMargin" format="dimension" />
+        <attr name="suffixMinuteLeftMargin" format="dimension" />
+        <attr name="suffixMinuteRightMargin" format="dimension" />
+        <attr name="suffixSecondLeftMargin" format="dimension" />
+        <attr name="suffixSecondRightMargin" format="dimension" />
+        <attr name="suffixMillisecondLeftMargin" format="dimension" />
+
+        <attr name="isShowTimeBgBorder" format="boolean" />
+        <attr name="timeBgBorderColor" format="color" />
+        <attr name="timeBgBorderSize" format="dimension" />
+        <attr name="timeBgBorderRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleViewBehavior">
+        <attr name="svb_dependOn" format="reference" />
+        <attr name="svb_dependType">
+            <enum name="height" value="0" />
+            <enum name="width" value="1" />
+            <enum name="x" value="2" />
+            <enum name="y" value="3" />
+        </attr>
+        <attr name="svb_dependTargetX" format="reference|dimension" />
+        <attr name="svb_dependTargetY" format="reference|dimension" />
+        <attr name="svb_dependTargetWidth" format="reference|dimension" />
+        <attr name="svb_dependTargetHeight" format="reference|dimension" />
+        <attr name="svb_targetX" format="reference|dimension" />
+        <attr name="svb_targetY" format="reference|dimension" />
+        <attr name="svb_targetWidth" format="reference|dimension" />
+        <attr name="svb_targetHeight" format="reference|dimension" />
+        <attr name="svb_targetBackgroundColor" format="reference|color" />
+        <attr name="svb_targetAlpha" format="float" />
+        <attr name="svb_targetRotateX" format="float" />
+        <attr name="svb_targetRotateY" format="float" />
+        <attr name="svb_animation" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CRippleView">
+
+        <attr name="stroke_width" format="dimension" />
+        <attr name="ripple_duration" format="integer" />
+        <attr name="repeat_count" format="integer" />
+
+        <!--同时显示的最大圆环数量-->
+        <attr name="circle_num" format="integer" />
+        <!--最大半径倍数-->
+        <attr name="max_radius_multiple" format="float" />
+        <attr name="circle_color" format="color" />
+
+    </declare-styleable>
+</resources>

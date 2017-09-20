@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2e2d2d</color>
+    <color name="colorPrimaryDark">#2e2a2a</color>
+    <color name="colorAccent">#2e2d2d</color>
+
+    <color name="mi_base_common_orange">#E78448</color>
+    <color name="mi_base_common_red">#bf3436</color>
+    <color name="mi_base_common_text_h1">#3a3a3a</color>
+    <color name="mi_base_common_text_h2">#676767</color>
+    <color name="mi_base_common_text_h3">#727272</color>
+    <color name="mi_base_common_text_h4">#9a9a9a</color>
+    <color name="mi_base_common_text_h5">#999999</color>
+    <color name="mi_base_common_text_gray">#a6a6a6</color>
+
+    <color name="mi_base_common_text_orange">#E3792B</color>
+    <color name="mi_base_common_text_green">#46B627</color>
+    <color name="mi_base_common_text_blue">#3275D8</color>
+
+    <color name="mi_base_common_text_font_brown">#897f78</color>
+    <color name="mi_base_common_text_font_red">#FE4648</color>
+    <color name="mi_base_common_text_font_orange">#f97b5c</color>
+    <color name="mi_base_common_text_font_green">#43aea8</color>
+    <color name="mi_base_common_text_font_blue">#4882ea</color>
+    <color name="mi_base_common_text_font_blue_deep">#248FAF</color>
+
+    <color name="mi_base_text_color_21">#212121</color>
+    <color name="mi_base_text_color_42">#424242</color>
+    <color name="mi_base_text_color_51">#515151</color>
+    <color name="mi_base_text_color_61">#616161</color>
+    <color name="mi_base_text_color_70">#707070</color>
+    <color name="mi_base_text_color_77">#777777</color>
+    <color name="mi_base_text_color_9e">#9e9e9e</color>
+    <color name="mi_base_text_color_96">#969696</color>
+    <color name="mi_base_text_color_gray">#EDEEEF</color>
+
+    <color name="mi_base_diliver_out_gray">#e2e2e2</color>
+    <color name="mi_base_diliver_in_gray">#eaebed</color>
+    <color name="mi_base_diliver_gray">#e1e1e1</color>
+    <color name="mi_base_diliver_gray_f2">#f2f2f2</color>
+    <color name="mi_base_diliver_gray_cc">#CBCCCD</color>
+    <color name="mi_base_diliver_bikego_ver_line_gray">#CFD0D1</color>
+
+    <color name="mi_base_black_alpha_30">#4D000000</color>
+    <color name="mi_base_transport_gray">#99FFFFFF</color>
+    <color name="mi_base_input_hint_color">#ffc5c5c5</color>
+
+    <!-- 二维码扫描框 -->
+    <color name="mi_base_qrcode_result_view">#b0000000</color>
+    <color name="mi_base_qrcode_viewfinder_mask">#60000000</color>
+    <!-- 透明：#00000000 扫描红点 #ff402d -->
+    <color name="mi_base_qrcode_possible_result_points">#00000000</color>
+    <color name="mi_base_qrcode_scan_storke_color">#ff402d</color>
+
+
+</resources>
