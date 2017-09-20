@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.mi.xbaseproject.common.data.ILoginDataManager;
 import com.mi.xbaseproject.common.data.LoginDataManagerSPImpl;
 
+
 /**
  * 若把初始化内容放到initData实现,就是采用Lazy方式加载的Fragment
  * 若不需要Lazy加载则initData方法内留空,初始化内容放到initViews即可
