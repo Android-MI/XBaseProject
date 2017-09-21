@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Gallery;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -85,6 +84,7 @@ public class SupportDisplay {
     }
 
     @SuppressLint("NewApi")
+    @SuppressWarnings("deprecation")
     public static void getSize(Display display, Point outSize) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             display.getSize(outSize);
@@ -333,10 +333,6 @@ public class SupportDisplay {
                 SupportDisplay.resetContrlerTextSize(tv, textSize);
             }
 
-        }
-        if (view instanceof Gallery) {
-            Gallery gallery = (Gallery) view;
-            gallery.setSpacing(calculateActualControlerSize(10f));
         }
     }
 }

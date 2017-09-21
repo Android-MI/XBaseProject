@@ -19,30 +19,40 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import java.lang.reflect.Method;
-
 public class SystemBarTintManager {
     /**
      * The default system bar tint color value.
      */
     public static final int DEFAULT_TINT_COLOR = 0x99000000;
     private static String sNavBarOverride;
+    private static boolean sIsMiuiV6;
 
-    static {
-        // Android allows a system property to override the presence of the navigation bar.
-        // Used by the emulator.
-        // See https://github.com/android/platform_frameworks_base/blob/master/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java#L1076
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            try {
-                Class c = Class.forName("android.os.SystemProperties");
-                Method m = c.getDeclaredMethod("get", String.class);
-                m.setAccessible(true);
-                sNavBarOverride = (String) m.invoke(null, "qemu.hw.mainkeys");
-            } catch (Throwable e) {
-                sNavBarOverride = null;
-            }
-        }
-    }
+//    static {
+//        // Android allows a system property to override the presence of the navigation bar.
+//        // Used by the emulator.
+//        // See https://github.com/android/platform_frameworks_base/blob/master/policy/src/com/android/internal/policy/impl/PhoneWindowManager.java#L1076
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+//            try {
+//                Class c = Class.forName("android.os.SystemProperties");
+//                if (c != null) {
+//                    Method m;
+//                    m = c.getDeclaredMethod("get", String.class);
+//                    m.setAccessible(true);
+//                    try {
+//                        sNavBarOverride = (String) m.invoke(null, "qemu.hw.mainkeys");
+//                    } catch (IllegalAccessException e) {
+//                        e.printStackTrace();
+//                    } catch (InvocationTargetException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            } catch (NoSuchMethodException e) {
+//                sNavBarOverride = null;
+//            }catch (ClassNotFoundException e) {
+//                sNavBarOverride = null;
+//            }
+//        }
+//    }
 
     private final SystemBarConfig mConfig;
     private boolean mStatusBarAvailable;

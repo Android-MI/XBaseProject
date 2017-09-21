@@ -343,6 +343,7 @@ public class Utils {
         return context.getResources().getDimensionPixelSize(R.dimen.tab_height);
     }
 
+    @SuppressWarnings("deprecation")
     public static Point getDisplayDimen(Context context) {
         Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))
                 .getDefaultDisplay();

@@ -90,8 +90,7 @@ public class ApiAccess {
         // mProgressDialog.setMessage(GlobalConstant.PROGRESS_DIALOG_MESSAGE);
         // mProgressDialog.show();
 
-        mProgressDialog = new ProgressDialog(activity,
-                ProgressDialog.THEME_HOLO_LIGHT);
+        mProgressDialog = new ProgressDialog(activity,android.R.style.Theme_Material_Light_Dialog_Alert);
         mProgressDialog.setMessage("加载中...");
         mProgressDialog.setCancelable(false);
         mProgressDialog.setCanceledOnTouchOutside(false);
@@ -105,8 +104,7 @@ public class ApiAccess {
      * @param msg      显示文字
      */
     public static void showProgressDialog(Activity activity, String msg) {
-        mProgressDialog = new ProgressDialog(activity,
-                ProgressDialog.THEME_HOLO_LIGHT);
+        mProgressDialog = new ProgressDialog(activity,android.R.style.Theme_Material_Light_Dialog_Alert);
         mProgressDialog.setMessage(msg);
         mProgressDialog.setCancelable(false);
         mProgressDialog.setCanceledOnTouchOutside(false);

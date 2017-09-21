@@ -34,7 +34,6 @@ import android.widget.Toast;
 
 import com.mi.xbaseproject.common.data.ILoginDataManager;
 import com.mi.xbaseproject.common.data.LoginDataManagerSPImpl;
-import com.mi.xbaseproject.common.utils.SystemBarTintManager;
 
 import me.drakeet.materialdialog.MaterialDialog;
 
@@ -318,10 +317,10 @@ public abstract class BaseActivity extends AppCompatActivity {
             window.setStatusBarColor(setStatusBarColor());
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             //4.4-5.0使用三方工具类
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            SystemBarTintManager tintManager = new SystemBarTintManager(this);
-            tintManager.setStatusBarTintEnabled(true);
-            tintManager.setStatusBarTintColor(setStatusBarColor());
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//            SystemBarTintManager tintManager = new SystemBarTintManager(this);
+//            tintManager.setStatusBarTintEnabled(true);
+//            tintManager.setStatusBarTintColor(setStatusBarColor());
         }
     }
 

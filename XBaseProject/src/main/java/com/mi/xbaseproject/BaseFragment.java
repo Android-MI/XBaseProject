@@ -71,6 +71,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
         super.onAttach(context);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onAttach(Activity context) {
         mBaseActivity = (BaseActivity) context;

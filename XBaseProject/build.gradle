@@ -24,6 +24,7 @@ android {
     }
     lintOptions {
         abortOnError false
+        disable 'TypographyFractions','TypographyQuotes'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
@@ -67,7 +68,6 @@ dependencies {
 
 //gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
 publish {
-    repoName = ""//仓库名，repoName 如果没有填写，上传的库默认仓库是maven
     userOrg = 'brightmi'
     groupId = 'com.mi.base'
     artifactId = 'xproject'

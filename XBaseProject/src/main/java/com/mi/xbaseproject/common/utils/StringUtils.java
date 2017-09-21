@@ -18,10 +18,6 @@ import java.util.regex.Pattern;
 
 /**
  * 字符串操作工具包
- *
- * @author 小米
- * @version 1.0
- * @created 2016-06-01
  */
 public class StringUtils {
     private final static Pattern emailer = Pattern
