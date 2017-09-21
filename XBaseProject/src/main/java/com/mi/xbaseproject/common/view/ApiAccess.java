@@ -11,6 +11,12 @@ public class ApiAccess {
     private static ProgressDialog mProgressDialog;
     private static CustomProgressDialog mCustomProgressDialog;
 
+    /**
+     * 获得实例
+     *
+     * @param context 上下文
+     * @return 返回 apiAccess
+     */
     public static ApiAccess getInstance(Context context) {
         if (apiAccess == null) {
             apiAccess = new ApiAccess();
@@ -23,10 +29,7 @@ public class ApiAccess {
      *
      * @param activity 上下文
      * @param msg      要显示的文字信息
-     * @param canBack  点击屏幕区域，是否让其自动消失<br/>
-     *                 true ：可以 ； false ： 不可以
-     * @Title showCustomProgress
-     * @Description 自定义ProgressDialog 样式
+     * @param canBack  点击屏幕区域，是否让其自动消失
      */
     public static void showCustomProgress(Activity activity, String msg,
                                           boolean canBack) {
@@ -39,6 +42,12 @@ public class ApiAccess {
         mCustomProgressDialog.show();
     }
 
+    /**
+     * 显示加载框
+     *
+     * @param activity Activity
+     * @param msg      提示文字
+     */
     public static void showCustomProgress(Activity activity, String msg) {
         if (mCustomProgressDialog != null) {
             mCustomProgressDialog.cancel();
@@ -49,6 +58,9 @@ public class ApiAccess {
         mCustomProgressDialog.show();
     }
 
+    /**
+     * 隐藏
+     */
     public static void dismissCustomProgressDialog() {
         if (mCustomProgressDialog == null) {
             return;
@@ -58,6 +70,12 @@ public class ApiAccess {
         }
     }
 
+    /**
+     * 是否显示
+     *
+     * @param activity 当前 Activity
+     * @return 是否显示状态
+     */
     public static boolean isCustomProgressDialogShow(Activity activity) {
         if (mCustomProgressDialog == null) {
             return false;
@@ -80,6 +98,12 @@ public class ApiAccess {
         mProgressDialog.show();
     }
 
+    /**
+     * 显示
+     *
+     * @param activity 当前 Activity
+     * @param msg      显示文字
+     */
     public static void showProgressDialog(Activity activity, String msg) {
         mProgressDialog = new ProgressDialog(activity,
                 ProgressDialog.THEME_HOLO_LIGHT);
@@ -89,6 +113,13 @@ public class ApiAccess {
         mProgressDialog.show();
     }
 
+    /**
+     * 显示加载框
+     *
+     * @param activity 当前 Activity
+     * @param msg      显示文字
+     * @param theme    样式
+     */
     public static void showProgressDialog(Activity activity, String msg,
                                           int theme) {
 
@@ -99,6 +130,12 @@ public class ApiAccess {
         mProgressDialog.show();
     }
 
+    /**
+     * 是否显示
+     *
+     * @param activity 当前 Activity
+     * @return 是否显示状态
+     */
     public static boolean isProgressDialogShow(Activity activity) {
         if (mProgressDialog == null) {
             return false;
@@ -106,6 +143,9 @@ public class ApiAccess {
         return mProgressDialog.isShowing();
     }
 
+    /**
+     * 隐藏
+     */
     public static void dismissProgressDialog() {
         if (mProgressDialog == null) {
             return;

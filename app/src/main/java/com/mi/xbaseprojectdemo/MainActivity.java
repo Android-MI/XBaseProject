@@ -28,10 +28,8 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         init();
-
     }
     private void init() {
-
         CCLog.e("Log Message");
         mTvSubTitle.setText("HAHA");
         Glide.with(this).load("http://upload-images.jianshu.io/upload_images/926747-e90b02a83e8aa382.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240").bitmapTransform(new CropCircleTransformation(this)).into(mIvTest);

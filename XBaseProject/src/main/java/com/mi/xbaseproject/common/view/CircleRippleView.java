@@ -89,10 +89,12 @@ public class CircleRippleView extends View implements Animator.AnimatorListener 
             mValueAnimator.setIntValues(mRadius, (int) (mRadius * maxRadiusMultiple));
             mValueAnimator.setDuration(mDuration);
             mValueAnimator.setRepeatCount(mRepeatCount);
-            mValueAnimator.addUpdateListener(animation -> {
-                mChangeRadius = (int) animation.getAnimatedValue();
-                invalidate();
-
+            mValueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    mChangeRadius = (int) animation.getAnimatedValue();
+                    invalidate();
+                }
             });
             mValueAnimator.addListener(this);
             isPlaying = true;

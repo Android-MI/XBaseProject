@@ -79,7 +79,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         initBaseActivityConfig();
     }
 
-    protected void initBaseActivityConfig() {};
+    protected void initBaseActivityConfig() {
+    }
+
+    ;
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -118,7 +121,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:// 点击返回图标事件
+            case android.R.id.home:
                 finish();
             default:
                 return super.onOptionsItemSelected(item);
@@ -219,20 +222,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         return ni != null && ni.isConnectedOrConnecting();
     }
 
-    /**
-     * 设置添加屏幕的背景透明度
-     */
     public void backgroundAlpha(float bgAlpha) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
         lp.alpha = bgAlpha;
         getWindow().setAttributes(lp);
     }
 
-    /**
-     * 拨打电话号码
-     *
-     * @param telNo 电话号码
-     */
     public void callTelPhone(String telNo) {
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
@@ -253,17 +248,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * 提示拨打电话对话框
-     */
     public android.support.v7.app.AlertDialog telDialog(String message, final String telNo) {
 
-        return showDialog(mBaseActivity, null, message, null, "确定", "取消", (dialog1, which) -> callTelPhone(telNo), null, true);
+        return showDialog(mBaseActivity, null, message, null, "确定", "取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                callTelPhone(telNo);
+            }
+        }, null, true);
     }
 
-    /**
-     * 公用提示框
-     */
     public void showToast(final String info) {
 
         runOnUiThread(new Runnable() {
@@ -285,6 +279,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 子类可以重写改变状态栏颜色
+     * @return statusBarColor
      */
     protected int setStatusBarColor() {
         return getColorPrimary();
@@ -292,6 +287,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 子类可以重写决定是否使用透明状态栏
+     * @return status
      */
     protected boolean translucentStatusBar() {
         return false;
@@ -455,8 +451,18 @@ public abstract class BaseActivity extends AppCompatActivity {
         mMaterialDialog = new MaterialDialog(this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton("确认", v -> mMaterialDialog.dismiss())
-                .setNegativeButton("取消", v -> mMaterialDialog.dismiss());
+                .setPositiveButton("确认", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                    }
+                })
+                .setNegativeButton("取消", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                    }
+                });
 
         mMaterialDialog.show();
 
@@ -466,17 +472,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         mMaterialDialog = new MaterialDialog(this)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(positiveBtnText, v -> {
-                    mMaterialDialog.dismiss();
-                    if (onMDialogPositiveClickListener != null) {
-                        onMDialogPositiveClickListener.onPositiveClick(v);
+                .setPositiveButton(positiveBtnText, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                        if (onMDialogPositiveClickListener != null) {
+                            onMDialogPositiveClickListener.onPositiveClick(v);
+                        }
                     }
                 })
-                .setNegativeButton(nevigationBtnText, v -> {
-                    mMaterialDialog.dismiss();
-
-                    if (onMDialogPositiveClickListener != null) {
-                        onMDialogPositiveClickListener.onNegativeClick(v);
+                .setNegativeButton(nevigationBtnText, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (onMDialogPositiveClickListener != null) {
+                            onMDialogPositiveClickListener.onNegativeClick(v);
+                        }
                     }
                 });
 
@@ -488,17 +498,21 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .setTitle(title)
                 .setCanceledOnTouchOutside(false)
                 .setMessage(message)
-                .setPositiveButton("确认", v -> {
-                    mMaterialDialog.dismiss();
-                    if (onMDialogPositiveClickListener != null) {
-                        onMDialogPositiveClickListener.onPositiveClick(v);
+                .setPositiveButton("确认", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mMaterialDialog.dismiss();
+                        if (onMDialogPositiveClickListener != null) {
+                            onMDialogPositiveClickListener.onPositiveClick(v);
+                        }
                     }
                 })
-                .setNegativeButton("取消", v -> {
-                    mMaterialDialog.dismiss();
-
-                    if (onMDialogPositiveClickListener != null) {
-                        onMDialogPositiveClickListener.onNegativeClick(v);
+                .setNegativeButton("取消", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (onMDialogPositiveClickListener != null) {
+                            onMDialogPositiveClickListener.onNegativeClick(v);
+                        }
                     }
                 });
 

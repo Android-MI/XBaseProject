@@ -49,9 +49,6 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
         }
     }
 
-    /**
-     * @since 2.5.0
-     */
     private void checkPermissions(String... permissions) {
         List<String> needRequestPermissonList = findDeniedPermissions(permissions);
         if (null != needRequestPermissonList
@@ -64,11 +61,9 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
     }
 
     /**
-     * 获取权限集中需要申请权限的列表
-     *
-     * @param permissions
-     * @return
-     * @since 2.5.0
+     *  获取权限集中需要申请权限的列表
+     * @param permissions 权限列表
+     * @return List
      */
     private List<String> findDeniedPermissions(String[] permissions) {
         List<String> needRequestPermissonList = new ArrayList<String>();
@@ -85,10 +80,8 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
 
     /**
      * 检测是否说有的权限都已经授权
-     *
      * @param grantResults
-     * @return
-     * @since 2.5.0
+     * @return 是否授权
      */
     private boolean verifyPermissions(int[] grantResults) {
         for (int result : grantResults) {
@@ -112,8 +105,6 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
 
     /**
      * 显示提示信息
-     *
-     * @since 2.5.0
      */
     private void showMissingPermissionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -144,8 +135,6 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
 
     /**
      * 启动应用的设置
-     *
-     * @since 2.5.0
      */
     private void startAppSettings() {
         Intent intent = new Intent(

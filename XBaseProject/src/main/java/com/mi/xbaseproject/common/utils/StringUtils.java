@@ -1,6 +1,7 @@
 package com.mi.xbaseproject.common.utils;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.mi.utils.CCLog;
 
@@ -25,12 +26,6 @@ import java.util.regex.Pattern;
 public class StringUtils {
     private final static Pattern emailer = Pattern
             .compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
-    // private final static SimpleDateFormat dateFormater = new
-    // SimpleDateFormat(
-    // "yyyy-MM-dd HH:mm:ss");
-    // private final static SimpleDateFormat dateFormater2 = new
-    // SimpleDateFormat(
-    // "yyyy-MM-dd");
     private final static String REPLACE_PATTERN = "＜br\\s*/?＞|＜p\\s*/?＞|[\\s\\n]";
 
     private final static ThreadLocal<SimpleDateFormat> dateFormater = new ThreadLocal<SimpleDateFormat>() {
@@ -65,7 +60,7 @@ public class StringUtils {
      * 字符串转JSON
      *
      * @param json
-     * @return
+     * @return JSONObject
      * @throws JSONException
      */
     public static JSONObject toJSONObject(String json) throws JSONException {
@@ -85,7 +80,7 @@ public class StringUtils {
      * 字符串转JSON
      *
      * @param json
-     * @return
+     * @return JSONArray
      * @throws JSONException
      */
     public static JSONArray toJSONArray(String json) throws JSONException {
@@ -103,8 +98,8 @@ public class StringUtils {
     /**
      * 将字符串转位日期类型
      *
-     * @param sdate
-     * @return
+     * @param sdate 字符串
+     * @return 日期
      */
     public static Date toDate(String sdate) {
         try {
@@ -118,7 +113,7 @@ public class StringUtils {
      * 时间戳转换
      *
      * @param timestampString
-     * @return
+     * @return 日期
      */
     public static String TimeStamp2Date(String timestampString) {
         Long timestamp = Long.parseLong(timestampString) * 1000;
@@ -128,8 +123,8 @@ public class StringUtils {
     /**
      * 以友好的方式显示距离
      *
-     * @param distance
-     * @return
+     * @param distance 距离
+     * @return 友好的显示内容
      */
     public static String friendly_Distance(double distance) {
         String dis = "";
@@ -147,18 +142,19 @@ public class StringUtils {
             }
         } else {
 //            dis = "<1km";
-            dis =  String.format("%.1f", distance)+ "m";
+            dis = String.format("%.1f", distance) + "m";
         }
         // Log.v("以友好的方式显示距离", distance + "   " + dis);
         return dis;
     }
+
     public static String pointDistance(double distance) {
-        CCLog.e("两点间距离 = "+distance);
+        Log.e("两点间距离 ", distance + "");
         String dis = "0.0km";
         if (distance >= 1000) {
             dis = String.format("%.1f", (distance / 1000)) + "km";
         } else {
-            dis =  String.format("%.1f", distance)+ "m";
+            dis = String.format("%.1f", distance) + "m";
         }
         return dis;
     }
@@ -167,7 +163,7 @@ public class StringUtils {
      * 以友好的方式显示时间
      *
      * @param sdate
-     * @return
+     * @return 显示内容
      */
     public static String friendly_time(String sdate) {
         Date time = toDate(sdate);
@@ -218,7 +214,7 @@ public class StringUtils {
      * 判断给定字符串时间是否为今日
      *
      * @param sdate
-     * @return boolean
+     * @return boolean 是否进日
      */
     public static boolean isToday(String sdate) {
         boolean b = false;
@@ -237,7 +233,7 @@ public class StringUtils {
     /**
      * 判断给定字符串是否空白串。 空白串是指由空格、制表符、回车符、换行符组成的字符串 若输入字符串为null或空字符串，返回true
      *
-     * @param input
+     * @param input 字符串
      * @return boolean
      */
     public static boolean isEmpty(String input) {
@@ -256,8 +252,8 @@ public class StringUtils {
     /**
      * 判断是不是一个合法的电子邮件地址
      *
-     * @param email
-     * @return
+     * @param email 字符串
+     * @return 是否符合 email 规则
      */
     public static boolean isEmail(String email) {
         if (email == null || email.trim().length() == 0)
@@ -268,8 +264,8 @@ public class StringUtils {
     /**
      * 字符串转整数
      *
-     * @param str
-     * @param defValue
+     * @param str 字符串
+     * @param defValue  默认值
      * @return
      */
     public static int toInt(String str, int defValue) {

@@ -13,10 +13,6 @@ import java.util.List;
 
 public class ErrorInfoBean {
 
-    /**
-     * code : 403
-     * message : 没有该骑手！
-     */
     public int code;
     public String message;
 

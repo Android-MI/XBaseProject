@@ -104,9 +104,6 @@ public class Utils {
         return isStringEmpty(strFromView(view));
     }
 
-    /**
-     * 从TextView或者EditText组件中获得内容
-     */
     public static String strFromView(View view) {
         String strText = "";
         if (null != view) {
@@ -119,9 +116,6 @@ public class Utils {
         return strText;
     }
 
-    /**
-     * 两个string 是否相等
-     */
     public static boolean isEqual(String str1, String str2) {
         if (null == str2) {
             return false;
@@ -142,9 +136,6 @@ public class Utils {
         return isStringEmpty(strText);
     }
 
-    /**
-     * String 是否为空判断
-     */
     public static boolean isStringEmpty(String str) {
 
         return null == str || "".equals(str);
@@ -153,9 +144,8 @@ public class Utils {
 
     /**
      * 判断数组是否越界
-     *
      * @param mCookieValues
-     * @return
+     * @return 结果
      */
     public static boolean isArrayIndexOutOfBounds(String[] mCookieValues) {
         return mCookieValues.length > 1;
@@ -181,9 +171,6 @@ public class Utils {
         return strNoticeDate;
     }
 
-    /**
-     * 快速连击
-     */
     public static boolean isFastDoubleClick() {
         long time = System.currentTimeMillis();
         long timeD = time - lastClickTime;
@@ -195,9 +182,6 @@ public class Utils {
     }
 
 
-    /**
-     * 判断指定的文件名是否存在
-     */
     public static boolean fileIsExists(String filePath) {
         try {
             File file = new File(filePath);
@@ -235,13 +219,6 @@ public class Utils {
         return (H / W);
     }
 
-
-    /**
-     * [获取应用程序版本名称信息]
-     *
-     * @param context
-     * @return 当前应用的版本名称
-     */
     public static String getVersionName(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -254,12 +231,6 @@ public class Utils {
         }
         return null;
     }
-
-    /**
-     * 将长时间格式字符串转换为时间 yyyy-MM-dd HH:mm
-     *
-     * @return yyyy-MM-dd HH:mm
-     */
     @SuppressLint("SimpleDateFormat")
     public static String getStringDate(Long date) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
@@ -268,26 +239,12 @@ public class Utils {
         return dateString;
     }
 
-
-    /**
-     * 验证邮箱的真实性
-     *
-     * @param strEmail
-     * @return
-     */
     public static boolean isEmail(String strEmail) {
         String strPattern = "^[a-zA-Z][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
         Pattern p = Pattern.compile(strPattern);
         Matcher m = p.matcher(strEmail);
         return m.matches();
     }
-
-    /**
-     * 验证手机号码的真实性
-     *
-     * @param mobiles
-     * @return
-     */
     // public static boolean isMobileNum(String mobiles) {
     // Pattern p = Pattern
     // .compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");

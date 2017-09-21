@@ -15,7 +15,6 @@ import java.util.List;
 /**
  * Created by xiaomi on 2017/9/1.
  */
-
 public class WaveView extends View {
     private float mInitialRadius;   // 初始波纹半径
     private float mMaxRadius;   // 最大波纹半径

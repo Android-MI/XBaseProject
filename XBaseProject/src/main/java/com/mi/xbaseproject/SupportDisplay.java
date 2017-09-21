@@ -88,10 +88,6 @@ public class SupportDisplay {
         return Math.min(mDisplayWidth, mDisplayHeight);
     }
 
-    /**
-     * @param display System display.
-     * @param outSize Target size.
-     */
     @SuppressLint("NewApi")
     public static void getSize(Display display, Point outSize) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -132,27 +128,13 @@ public class SupportDisplay {
 
     }
 
-    /**
-     * 获取屏幕的宽
-     *
-     * @return mDisplayWidth
-     */
     public static int getmDisplayWidth() {
         return mDisplayWidth;
     }
 
-    /**
-     * 获取屏幕的高
-     *
-     * @return mDisplayHeight
-     */
     public static int getmDisplayHeight() {
         return mDisplayHeight;
     }
-
-    /**
-     * 遍历按比例计算所有父组件下所有的view
-     */
     public static void resetAllChildViewParam(ViewGroup rootView,
                                               boolean isLandscape) {
         int childCount = rootView.getChildCount();

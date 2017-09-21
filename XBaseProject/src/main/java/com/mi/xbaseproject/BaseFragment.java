@@ -147,14 +147,12 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
         return ni != null && ni.isConnectedOrConnecting();
     }
 
-    /**
-     * 若不需要Lazy加载则initData方法内留空,初始化内容放到initViews即可
-     */
+    // 若不需要Lazy加载则initData方法内留空,初始化内容放到initViews即可
+
 //    protected abstract View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState);
 
-    /**
-     * 若把初始化内容放到initData实现,就是采用Lazy方式加载的Fragment
-     */
+    // 若把初始化内容放到initData实现,就是采用Lazy方式加载的Fragment
+
 //    protected abstract void initData();
     public String getTitle() {
         return TextUtils.isEmpty(fragmentTitle) ? "" : fragmentTitle;
