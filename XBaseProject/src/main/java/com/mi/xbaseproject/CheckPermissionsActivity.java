@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
 import java.util.ArrayList;
@@ -22,11 +21,12 @@ import java.util.List;
  * 继承了Activity，实现Android6.0的运行时权限检测
  * 需要进行运行时权限检测的Activity可以继承这个类
  */
-public class CheckPermissionsActivity extends AppCompatActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
+public abstract class CheckPermissionsActivity extends BaseActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
     /**
      * 需要进行检测的权限数组
      */
     protected String[] needPermissions = {
+            Manifest.permission.CAMERA,
             Manifest.permission.ACCESS_COARSE_LOCATION,
             Manifest.permission.ACCESS_FINE_LOCATION,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -61,7 +61,8 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
     }
 
     /**
-     *  获取权限集中需要申请权限的列表
+     * 获取权限集中需要申请权限的列表
+     *
      * @param permissions 权限列表
      * @return List
      */
@@ -80,6 +81,7 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
 
     /**
      * 检测是否说有的权限都已经授权
+     *
      * @param grantResults
      * @return 是否授权
      */
@@ -109,7 +111,7 @@ public class CheckPermissionsActivity extends AppCompatActivity implements Activ
     private void showMissingPermissionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("提示");
-        builder.setMessage("当前应用缺少必要权限。\\n\\n请点击\\\"设置\\\"-\\\"权限\\\"-打开所需权限");
+        builder.setMessage("当前应用缺少必要权限。\n请点击\"设置\"-\"权限\"-打开所需权限");
 
         // 拒绝, 退出应用
         builder.setNegativeButton("取消",
