@@ -94,8 +94,8 @@ public class ActionSheetDialog {
     /**
      * @param strItem  条目名称
      * @param color    条目字体颜色，设置null则默认蓝色
-     * @param listener
-     * @return
+     * @param listener 监听
+     * @return 返回对话框
      */
     public ActionSheetDialog addSheetItem(String strItem, SheetItemColor color,
                                           OnSheetItemClickListener listener) {

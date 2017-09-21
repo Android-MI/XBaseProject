@@ -18,10 +18,6 @@ import android.widget.TextView;
 
 /**
  * 多屏幕适配
- *
- * @author CollCloud_小米
- * @ClassName SupportDisplay
- * @Description 多屏幕重新计算类
  */
 public class SupportDisplay {
 

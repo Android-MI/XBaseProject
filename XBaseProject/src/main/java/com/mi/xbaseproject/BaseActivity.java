@@ -327,6 +327,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取主题色
+     * @return 颜色
      */
     public int getColorPrimary() {
         TypedValue typedValue = new TypedValue();
@@ -336,6 +337,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 获取深主题色
+     * @return 颜色
      */
     public int getDarkColorPrimary() {
         TypedValue typedValue = new TypedValue();
@@ -343,9 +345,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         return typedValue.data;
     }
 
-    /**
-     * 初始化 Toolbar
-     */
     public void initToolBar(Toolbar toolbar, boolean homeAsUpEnabled, String title) {
         toolbar.setTitle(title);
         setSupportActionBar(toolbar);

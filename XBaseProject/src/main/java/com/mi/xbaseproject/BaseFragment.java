@@ -137,9 +137,6 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
 
     protected abstract void resetLayout(View view);
 
-    /**
-     * 检查网络状态
-     */
     public boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getActivity()
                 .getSystemService(Context.CONNECTIVITY_SERVICE);

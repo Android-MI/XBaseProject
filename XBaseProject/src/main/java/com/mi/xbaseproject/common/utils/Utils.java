@@ -96,9 +96,6 @@ public class Utils {
         return statusHeight;
     }
 
-    /**
-     * EditText是否为空的判断
-     */
     public static boolean isViewEmpty(TextView view) {
 
         return isStringEmpty(strFromView(view));
@@ -142,23 +139,9 @@ public class Utils {
     }
 
 
-    /**
-     * 判断数组是否越界
-     * @param mCookieValues
-     * @return 结果
-     */
     public static boolean isArrayIndexOutOfBounds(String[] mCookieValues) {
         return mCookieValues.length > 1;
     }
-
-    /**
-     * 日期格式化
-     *
-     * @param strNoticeDate
-     * @param oldFormat
-     * @param newFormat
-     * @return
-     */
 
     public static String formatDate(String strNoticeDate, String oldFormat,
                                     String newFormat) {
@@ -252,12 +235,6 @@ public class Utils {
     // return m.matches();
     // }
 
-    /**
-     * 验证身份证号是否符合规则
-     *
-     * @param text 身份证号
-     * @return
-     */
     public static boolean isPersonCardValidation(String text) {
         String regx = "[0-9]{17}x";
         String reg1 = "[0-9]{15}";

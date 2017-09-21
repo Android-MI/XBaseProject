@@ -32,6 +32,8 @@ public class BaseApplication extends Application {
 
     /**
      * 判断当前版本是否兼容目标版本的方法
+     * @param VersionCode 版本号
+     * @return 判断结果
      */
     public static boolean isMethodsCompat(int VersionCode) {
         int currentVersion = android.os.Build.VERSION.SDK_INT;
@@ -92,6 +94,7 @@ public class BaseApplication extends Application {
 
     /**
      * 检测当前系统声音是否为正常模式
+     * @return 是否正常
      */
     public boolean isAudioNormal() {
         AudioManager mAudioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
@@ -100,6 +103,7 @@ public class BaseApplication extends Application {
 
     /**
      * 检测网络是否可用
+     * @return 是否连接正常
      */
     public boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -107,9 +111,6 @@ public class BaseApplication extends Application {
         return ni != null && ni.isConnectedOrConnecting();
     }
 
-    /**
-     * 获取App安装包信息
-     */
     public PackageInfo getPackageInfo() {
         PackageInfo info = null;
         try {

@@ -183,9 +183,9 @@ public class CircleImageView extends AppCompatImageView {
         mBorderPaint.setColor(mBorderColor);
         invalidate();
     }
-
     /**
      * @deprecated Use {@link #setBorderColor(int)} instead
+     * @param borderColorRes 线条颜色
      */
     @Deprecated
     public void setBorderColorResource(@ColorRes int borderColorRes) {
