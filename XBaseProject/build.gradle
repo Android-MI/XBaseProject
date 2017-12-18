@@ -4,6 +4,7 @@ apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'me.tatarka.retrolambda'
 repositories {
     maven { url "http://dl.bintray.com/fotoapparat/fotoapparat" }
+    google()
 }
 
 android {
@@ -12,8 +13,8 @@ android {
     defaultConfig {
         minSdkVersion project.ext.minSdkVersion
         targetSdkVersion project.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.0.1"
+        versionCode 3
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -27,8 +28,8 @@ android {
         disable 'TypographyFractions','TypographyQuotes'
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility project.ext.sourceCompatibility
+        targetCompatibility project.ext.targetCompatibility
     }
 }
 allprojects {
@@ -50,9 +51,9 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile "com.android.support:design:$rootProject.libSversion"
+    compile "com.android.support:design:$project.ext.supportLibraryVersion"
     compile "com.github.bumptech.glide:glide:3.7.0"
-    compile "com.android.support:appcompat-v7:${libSversion}"
+    compile "com.android.support:appcompat-v7:$project.ext.supportLibraryVersion"
 
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
@@ -71,7 +72,7 @@ publish {
     userOrg = 'brightmi'
     groupId = 'com.mi.base'
     artifactId = 'xproject'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.3'
     desc = 'A base Android seed project ,include common activities,uitls,fragment etc。'
     website = 'https://github.com/Android-MI/XBaseProject.git'
     dryRun = false

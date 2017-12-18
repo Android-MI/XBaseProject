@@ -4,9 +4,10 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         classpath 'com.novoda:bintray-release:0.5.0'
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
         classpath 'me.tatarka:gradle-retrolambda:3.7.0'
@@ -16,20 +17,22 @@ buildscript {
     }
 }
 
+/**
+ * 工程中所有的module 都将能使用common_config 中的配置
+ */
+subprojects {
+    apply from: "${project.rootDir}/common_config.gradle"
+    dependencies {
+//        testCompile 'junit:junit:4.12'
+    }
+}
+
 allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        google()
         maven { url "https://jitpack.io" }
-    }
-    project.ext {
-        compileSdkVersion=25
-        targetSdkVersion=25
-        buildToolsVersion='25.0.3'
-        minSdkVersion=15
-        versionCode = 1
-        versionName = "1.0.0"
-        libSversion="25.3.1"
     }
     //加上这些
     tasks.withType(Javadoc) {
