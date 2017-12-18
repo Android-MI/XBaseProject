@@ -81,8 +81,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void initBaseActivityConfig() {
     }
 
-    ;
-
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         isLandscape = this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
