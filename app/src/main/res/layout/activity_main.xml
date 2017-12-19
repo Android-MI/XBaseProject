@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mi.xbpdemo.com.mi.xbpdemo.MainActivity">
+    tools:context="com.mi.xpdemo.MainActivity">
 
     <TextView
         android:id="@+id/tv_text_title"

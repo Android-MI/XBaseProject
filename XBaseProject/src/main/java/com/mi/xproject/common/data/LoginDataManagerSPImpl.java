@@ -10,7 +10,7 @@ import org.json.JSONArray;
  * APP数据存储实现类
  */
 public class LoginDataManagerSPImpl implements ILoginDataManager {
-    private static String preferencesName = "XbP_MI";
+    private static String preferencesName = SharedPreferencesDao.SharedPreferencesName;
     /**
      * 登录状态 KEY
      */

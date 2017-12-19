@@ -12,7 +12,7 @@ import android.util.Log;
 @SuppressWarnings("unchecked")
 public class SharedPreferencesDao {
     private static final String TAG = SharedPreferencesDao.class.getSimpleName();
-    private static final String SharedPreferencesName = "XBP-MI";
+    public static final String SharedPreferencesName = "XBP-MI";
     private static SharedPreferencesDao sharedPreferencesDao;
 
     private static Context mContext;   //init form application

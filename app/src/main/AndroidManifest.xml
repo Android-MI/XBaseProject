@@ -15,22 +15,20 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
-
     <application
-        android:name="com.mi.xproject.BaseApplication"
+        android:name="com.mi.xpdemo.common.base.CommonApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="XbpDemo"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:replace="android:label"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppSeedTheme.NoActionBar">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

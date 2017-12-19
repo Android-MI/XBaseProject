@@ -1,21 +1,56 @@
 package com.mi.xpdemo.common.base;
 
+import android.support.annotation.LayoutRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.mi.xproject.BaseActivity;
+import com.mi.xproject.common.data.ILoginDataManager;
+import com.mi.xproject.common.data.LoginDataManagerSPImpl;
 import com.mi.xproject.common.utils.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import butterknife.ButterKnife;
+
+import static com.mi.xpdemo.common.AppConstants.APP_PERFERENCES_NAME;
 
 /**
  * 共通Activity
  */
 public abstract class CommonActivity extends BaseActivity {
+
+    public ILoginDataManager mAppDataManager = LoginDataManagerSPImpl
+            .getInstace(this,APP_PERFERENCES_NAME);
+
+
+    @Override
+    public void setContentView(View view, ViewGroup.LayoutParams params) {
+        super.setContentView(view, params);
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    public void setContentView(View view) {
+        super.setContentView(view);
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void initBaseActivityConfig() {
+        super.initBaseActivityConfig();
+        ButterKnife.bind(this);
+    }
+
+    @Override
+    public void setContentView(@LayoutRes int layoutResID) {
+        super.setContentView(layoutResID);
+        ButterKnife.bind(this);
+    }
 
     protected void parseOnSuccessResult(String response, String url) {
         String message = "";

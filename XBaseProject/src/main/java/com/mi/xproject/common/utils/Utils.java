@@ -203,6 +203,17 @@ public class Utils {
         return (H / W);
     }
 
+    /**
+     * 判断当前版本是否兼容目标版本的方法
+     *
+     * @param VersionCode 版本号
+     * @return 判断结果
+     */
+    public static boolean isMethodsCompat(int VersionCode) {
+        int currentVersion = android.os.Build.VERSION.SDK_INT;
+        return currentVersion >= VersionCode;
+    }
+
     public static String getVersionName(Context context) {
         try {
             PackageManager packageManager = context.getPackageManager();

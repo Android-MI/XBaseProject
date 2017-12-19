@@ -5,6 +5,7 @@ import android.os.Environment;
 public class AppConstants {
     public static final String WECHAT_APP_ID = "";
     public static final String WECHAT_APP_Secret = "";
+    public static final String APP_PERFERENCES_NAME = "XBP-DEMO";
     /**
      * 有些希望能缓存在app 的内部私有目录，随着app 的卸载一起删除
      *   /data/data: context.getFileDir().getPath();
