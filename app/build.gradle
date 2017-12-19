@@ -9,7 +9,7 @@ android {
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.mi.xbaseprojectdemo"
+        applicationId "com.mi.xpdemo"
         minSdkVersion project.ext.minSdkVersion
         targetSdkVersion project.ext.targetSdkVersion
         versionCode 1
