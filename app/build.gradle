@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 //apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.jakewharton.butterknife'
 repositories {
-    maven { url "http://dl.bintray.com/fotoapparat/fotoapparat" }
+//    maven { url "http://dl.bintray.com/fotoapparat/fotoapparat" }
 }
 
 android {
@@ -47,7 +47,7 @@ dependencies {
     compile 'com.lzy.net:okgo:3.0.4'
 
 
-    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.7'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
 
 //    compile 'com.github.githubwing:ByeBurger:1.2.3'
 //    compile 'com.jude:easyrecyclerview:4.4.2'
