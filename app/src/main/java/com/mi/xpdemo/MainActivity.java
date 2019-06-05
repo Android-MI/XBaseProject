@@ -28,7 +28,6 @@ public class MainActivity extends CommonActivity {
     ViewPager viewPager;
     @BindView(R.id.tab_main)
     TabLayout tab;
-
     private List<Pair<String, Fragment>> items;
 
     @Override
