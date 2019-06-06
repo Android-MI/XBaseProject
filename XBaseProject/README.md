@@ -30,3 +30,21 @@ android {
  retrolambda {
      javaVersion JavaVersion.VERSION_1_6
  }
+
+
+
+## 发布
+> Use the publish closure to set the info of your package:
+
+```publish {
+    userOrg = 'novoda'
+    groupId = 'com.novoda'
+    artifactId = 'bintray-release'
+    publishVersion = '0.6.1'
+    desc = 'Oh hi, this is a nice description for a project, right?'
+    website = 'https://github.com/novoda/bintray-release'
+}```
+
+> Finally, use the task bintrayUpload to publish (make sure you build the project first!):
+
+``` $ ./gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false ```
